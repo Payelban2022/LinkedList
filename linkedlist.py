@@ -36,12 +36,22 @@ class linked_list:
             self.insert_at_end(data)
 
 
+    def get_length(self):
+       count = 0
+       itr = self.head
+       while itr:
+           count += 1
+           itr = itr.next
+       return count
+
+
 if __name__=='__main__':
     ll = linked_list()
     ll.insert_at_beginning(5)
     ll.insert_at_beginning(89)
     ll.insert_at_end(60)
     ll.insert_values(["bananas","mangoes","grapes","oranges"])
+    print("length:",ll.get_length())
     ll.print()
 
 
