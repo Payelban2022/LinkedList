@@ -18,7 +18,7 @@ class linked_list:
         itr = self.head
         liststr = ''
         while itr:
-            liststr += str(itr.data) + '-'
+            liststr += str(itr.data) + '-->'
             itr = itr.next
         print(liststr)
 
