@@ -44,6 +44,24 @@ class linked_list:
            itr = itr.next
        return count
 
+    def remove_at(self,index):
+        if index < 0 or index >= self.get_length():
+            raise Exception("Invalid index")
+
+        if index == 0:
+            self.head = self.head.next
+            return
+        count = 0
+        itr = self.head
+        while itr:
+            if count == index-1:
+                itr.next = itr.next.next
+                break
+            itr = itr.next
+            count += 1
+
+
+
 
 if __name__=='__main__':
     ll = linked_list()
@@ -52,6 +70,8 @@ if __name__=='__main__':
     ll.insert_at_end(60)
     ll.insert_values(["bananas","mangoes","grapes","oranges"])
     print("length:",ll.get_length())
+    ll.print()
+    ll.remove_at(2)
     ll.print()
 
 
